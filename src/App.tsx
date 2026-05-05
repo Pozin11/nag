@@ -35,7 +35,7 @@ function Homepage({ navigateTo }: { navigateTo: (page: string) => void }) {
       <header className="flex flex-col items-center justify-center text-center" style={{ minHeight: '70vh', padding: 'var(--space-8) var(--space-4)', backgroundImage: 'radial-gradient(circle at center, var(--color-surface) 0%, var(--color-background) 100%)' }}>
         <h1 style={{ fontSize: '4.5rem', marginBottom: 'var(--space-4)', color: 'var(--color-secondary)' }}>Discover the Soul of Nepal</h1>
         <p style={{ fontSize: '1.25rem', maxWidth: '700px', marginBottom: 'var(--space-8)', color: 'var(--color-text-muted)' }}>
-          Explore authentic, handcrafted artworks from master artisans across the Himalayas. From intricate Thangkas to contemporary expressions.
+          Hello from Niraj.Explore authentic, handcrafted artworks from master artisans across the Himalayas. From intricate Thangkas to contemporary expressions.
         </p>
         <div className="flex gap-4">
           <button className="btn btn-primary" onClick={() => navigateTo('gallery')}>Explore Gallery</button>
@@ -48,7 +48,7 @@ function Homepage({ navigateTo }: { navigateTo: (page: string) => void }) {
           <h2>Featured Masterpieces</h2>
           <a href="#" onClick={(e) => { e.preventDefault(); navigateTo('gallery'); }}>View All &rarr;</a>
         </div>
-        
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--space-8)' }}>
           {[1, 2, 3].map((item) => (
             <div key={item} className="card">
@@ -111,7 +111,7 @@ function GalleryShop({ navigateTo }: { navigateTo: (page: string) => void }) {
               <option>Price: High to Low</option>
             </select>
           </div>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-6)' }}>
             {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
               <div key={item} className="card" style={{ cursor: 'pointer' }} onClick={() => navigateTo('artwork-detail')}>
@@ -143,12 +143,12 @@ function ArtworkDetail({ navigateTo }: { navigateTo: (page: string) => void }) {
           <div style={{ flex: '1 1 400px' }}>
             <div style={{ width: '100%', height: '500px', backgroundColor: 'var(--color-surface-light)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-border)' }}></div>
           </div>
-          
+
           {/* Details */}
           <div style={{ flex: '1 1 400px', paddingTop: 'var(--space-4)' }}>
             <p style={{ color: 'var(--color-primary-light)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.875rem', marginBottom: 'var(--space-2)' }}>Traditional Thangka</p>
             <h1 style={{ fontSize: '3.5rem', marginBottom: 'var(--space-2)' }}>The Radiant Mandala</h1>
-            
+
             <div className="flex items-center gap-4" style={{ marginBottom: 'var(--space-6)', paddingBottom: 'var(--space-6)', borderBottom: '1px solid var(--color-border)' }}>
               <div style={{ width: '40px', height: '40px', borderRadius: 'var(--radius-full)', backgroundColor: 'var(--color-secondary)' }}></div>
               <div>
@@ -158,7 +158,7 @@ function ArtworkDetail({ navigateTo }: { navigateTo: (page: string) => void }) {
             </div>
 
             <p style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--color-secondary)', marginBottom: 'var(--space-6)' }}>$1,250.00</p>
-            
+
             <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-8)', lineHeight: '1.8' }}>
               A masterfully crafted mandala depicting the cosmos. Painted with natural pigments and 24k gold leaf on cotton canvas. This piece took over 3 months to complete and carries profound spiritual energy.
             </p>
@@ -203,7 +203,7 @@ function ArtistProfile({ navigateTo }: { navigateTo: (page: string) => void }) {
   return (
     <div className="animate-fade-in">
       <Navigation navigateTo={navigateTo} />
-      
+
       {/* Banner */}
       <div style={{ height: '300px', backgroundColor: 'var(--color-surface)', position: 'relative' }}>
         <div className="container" style={{ position: 'absolute', bottom: '-60px', left: '0', right: '0', display: 'flex', gap: 'var(--space-6)', alignItems: 'flex-end' }}>
@@ -308,7 +308,7 @@ function ArtistDashboard({ navigateTo }: { navigateTo: (page: string) => void })
               </tr>
             </thead>
             <tbody>
-              {[1,2,3].map((row) => (
+              {[1, 2, 3].map((row) => (
                 <tr key={row} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <td style={{ padding: 'var(--space-4) 0', display: 'flex', gap: 'var(--space-4)', alignItems: 'center' }}>
                     <div style={{ width: '60px', height: '60px', backgroundColor: 'var(--color-surface-light)', borderRadius: 'var(--radius-sm)' }}></div>
@@ -336,7 +336,7 @@ function UploadArtwork({ navigateTo }: { navigateTo: (page: string) => void }) {
       <Navigation navigateTo={navigateTo} />
       <div className="container" style={{ padding: 'var(--space-12) var(--space-4)', maxWidth: '800px' }}>
         <h1 style={{ marginBottom: 'var(--space-8)' }}>Upload New Artwork</h1>
-        
+
         <form className="card glass" style={{ padding: 'var(--space-8)' }} onSubmit={(e) => { e.preventDefault(); navigateTo('dashboard'); }}>
           <div style={{ marginBottom: 'var(--space-6)' }}>
             <label style={{ display: 'block', marginBottom: 'var(--space-2)', fontWeight: 'bold' }}>Artwork Title</label>
@@ -505,12 +505,12 @@ function App() {
       {currentPage === 'dashboard' && <ArtistDashboard navigateTo={setCurrentPage} />}
       {currentPage === 'upload-artwork' && <UploadArtwork navigateTo={setCurrentPage} />}
       {currentPage === 'checkout' && <Checkout navigateTo={setCurrentPage} />}
-      
+
       {/* Easter Egg / Previous Phase */}
       {currentPage === 'design-system' && (
         <div style={{ padding: '50px', color: '#fff' }}>Design System is active. <button onClick={() => setCurrentPage('home')}>Home</button></div>
       )}
-      
+
       <Footer />
     </>
   )
