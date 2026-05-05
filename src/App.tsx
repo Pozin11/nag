@@ -35,7 +35,7 @@ function Homepage({ navigateTo }: { navigateTo: (page: string) => void }) {
       <header className="flex flex-col items-center justify-center text-center" style={{ minHeight: '70vh', padding: 'var(--space-8) var(--space-4)', backgroundImage: 'radial-gradient(circle at center, var(--color-surface) 0%, var(--color-background) 100%)' }}>
         <h1 style={{ fontSize: '4.5rem', marginBottom: 'var(--space-4)', color: 'var(--color-secondary)' }}>Discover the Soul of Nepal</h1>
         <p style={{ fontSize: '1.25rem', maxWidth: '700px', marginBottom: 'var(--space-8)', color: 'var(--color-text-muted)' }}>
-          Hello from Niraj. Explore authentic, handcrafted artworks from master artisans across the Himalayas. From intricate Thangkas to contemporary expressions.
+          Explore authentic, handcrafted artworks from master artisans across the Himalayas. From intricate Thangkas to contemporary expressions.
         </p>
         <div className="flex gap-4">
           <button className="btn btn-primary" onClick={() => navigateTo('gallery')}>Explore Gallery</button>
