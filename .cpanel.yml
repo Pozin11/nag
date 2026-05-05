@@ -1,4 +1,4 @@
----
+
 deployment:
   tasks:
     - export DEPLOYPATH=~/domains/nepaleseartgallery.com/public_html/
