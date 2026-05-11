@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './index.css'
+import api from './api/woo'
 
 // ---------------------------------------------------------
 // Navigation Component
@@ -495,6 +496,24 @@ function Footer() {
 // ---------------------------------------------------------
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Suppress "never read" warning
+  console.log({ products, loading });
+
+  useEffect(() => {
+    // Simple test to ensure the API is connected and to resolve unused import warnings
+    api.get("products", { per_page: 5 })
+      .then((response: any) => { // Added : any here
+        setProducts(response.data);
+        setLoading(false);
+      })
+      .catch((error: any) => { // Added : any here
+        console.error("WooCommerce Error:", error);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <>
